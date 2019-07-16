@@ -20,8 +20,8 @@
     </form>
      <table>
          <tr>
-             <th>Product</th>
              <th>Company</th>
+             <th>Product</th>
          </tr>
          <c:forEach var="task1" items="${output}">
          <tr>
