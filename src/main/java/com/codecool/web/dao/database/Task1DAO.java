@@ -14,8 +14,8 @@ public final class Task1DAO extends AbstractDao{
 
     public List<Task1> task1List() throws SQLException {
         List<Task1> task1List = new ArrayList<>();
-        String sql = "select product_name as product, company_name as company from products" +
-        "join suppliers on products.supplier_id = suppliers.supplier_id" +
+        String sql = "select product_name as product, company_name as company from products " +
+        "join suppliers on products.supplier_id = suppliers.supplier_id " +
         "order by product_name, company_name";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
@@ -31,12 +31,12 @@ public final class Task1DAO extends AbstractDao{
 
     public List<Task1> task1ListFiltered(String company) throws SQLException {
         List<Task1> task1s = new ArrayList<>();
-        String sql = "select product_name as product, company_name as company from products" +
-            "join suppliers on products.supplier_id = suppliers.supplier_id" +
-            "where product_name = ?" +
+        String sql = "select product_name as product, company_name as company from products " +
+            "join suppliers on products.supplier_id = suppliers.supplier_id " +
+            "where company_name like ? " +
             "order by product_name, company_name";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, company);
+            statement.setString(1, "%" + company + "%");
             ResultSet rs = statement.executeQuery();
                 while(rs.next()) {
                     Task1 t1 = new Task1(
