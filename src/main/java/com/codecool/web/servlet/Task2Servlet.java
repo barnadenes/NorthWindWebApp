@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @WebServlet("/task2")
-public class Task2Servlet extends AbstractServlet{
+public final class Task2Servlet extends AbstractServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
