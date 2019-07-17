@@ -10,6 +10,11 @@ body, html {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    background: rosybrown;
+}
+
+h1 {
+    background: antiquewhite;
 }
 
 ul{
@@ -52,4 +57,14 @@ input {
     margin-top: 20px;
 }
 
+table, th, tr, td {
+    border: 2px solid black;
+    background: gray;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+table {
+    border: 5px solid black;
+}
 

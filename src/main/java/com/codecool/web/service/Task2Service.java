@@ -6,7 +6,7 @@ import com.codecool.web.model.Task2;
 import java.sql.SQLException;
 import java.util.List;
 
-public class Task2Service {
+public final class Task2Service {
     private final Task2DAO task2DAO;
 
     public Task2Service(Task2DAO task2DAO) {
